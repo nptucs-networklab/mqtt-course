@@ -14,7 +14,7 @@ topics = [
 def onConnect(client, userData, flag, rc):
     print('Connected to mqtt broker')
     for topic in topics:
-        client.subscribe('TEST')
+        client.subscribe(topic)
 
 def onMessage(client, userData, packet):
     topic = packet.topic
@@ -27,6 +27,6 @@ client.on_connect = onConnect
 client.on_message = onMessage
 
 
-client.connect(brokerHost, brokerPost)
+client.connect(brokerHost, brokerPort)
 client.loop_forever()
 

@@ -5,6 +5,7 @@ License: MIT (https://opensource.org/license/mit/)
 '''
 
 import paho.mqtt.client as mqtt
+import time
 
 brokerHost = '127.0.0.1'
 brokerPort = 1883
@@ -14,9 +15,9 @@ payload = ''
 def onConnect(client, userData, flag, rc):
     print('Connected to mqtt broker')
     client.publish(topic, payload)
-    exit(0)
 
 client = mqtt.Client()
+client.on_connect = onConnect
 
 client.connect(brokerHost, brokerPort)
-client.loop_forever()
+time.sleep(5)
