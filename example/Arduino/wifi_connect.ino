@@ -25,9 +25,13 @@ void setup() {
     delay(3000);
     Serial.print('.');
   }
-
-  while (status != WL_CONNECTED);
   Serial.println();
+
+  if (status != WL_CONNECTED) {
+    Serial.println("Connect Failed.");
+    while (true);
+  }
+
   Serial.println("Connect Successfully.");
 
 
