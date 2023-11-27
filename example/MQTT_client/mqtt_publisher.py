@@ -18,7 +18,7 @@ def onConnect(client, userData, flag, rc):
     client.publish(topic, payload)
     
 def onPublish(client, userdata, result):
-    global isPublishing;
+    global isPublishing
     isPublishing = False
 
 client = mqtt.Client()
