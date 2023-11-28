@@ -8,9 +8,9 @@
 WiFiClient wifi;
 MqttClient mqttClient(wifi);
 
-#define ssid       "JunYu"
-#define pass       "98765432"
-#define brokerHost "mqtt.nptucsai.org"
+#define ssid       ""
+#define pass       ""
+#define brokerHost ""
 #define brokerPort 1883
 #define led        9
 #define temp       A1
@@ -120,6 +120,4 @@ void publishMessage(String _topic, String payload) {
   mqttClient.print(payload);
   mqttClient.endMessage();
 }
-
-
 
