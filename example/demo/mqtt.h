@@ -8,9 +8,16 @@ void publishMessage();
 
 void onMqttMessage(int length) {
   String topic = String(mqttClient.messageTopic());
+  String msg = "";
+  while (mqttClient.available()) {
+    msg += (char)mqttClient.read();
+  }
   Serial.println(topic);
   if (topic == "ARDUINO/CONTROLL/PUBLISH") {
     publishMessage();
+  }
+  if (topic == "ARDUINO/CONTROLL/LED") {
+    setLED(msg.toInt());
   }
 }
 
