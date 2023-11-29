@@ -4,8 +4,8 @@
 
 #include <WiFiNINA.h>
 
-#define ssid "netlab-mqtt"
-#define pass "nptucsai"
+#define ssid ""
+#define pass ""
 
 const int retry  = 3;
 int status = WL_IDLE_STATUS;

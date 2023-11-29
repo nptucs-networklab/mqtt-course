@@ -11,8 +11,8 @@
 #define PIN_LED_DS 9
 
 
-#define SSID "JunYu"
-#define WIFI_PASSWORD "98765432"
+#define SSID ""
+#define WIFI_PASSWORD ""
 
 #define BROKER_HOST "mqtt.nptucsai.org"
 #define BROKER_PORT 1883
